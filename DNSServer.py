@@ -56,7 +56,7 @@ decrypted_value = decrypt_with_aes(encrypted_value, password, salt)  # test func
 # For future use
 def generate_sha256_hash(input_string):
     sha256_hash = hashlib.sha256()
-    sha256_hash.update(input_string.encode('utf-8'))
+    sha256_hash.update(input_string.encode("utf-8"))
     return sha256_hash.hexdigest()
 
 
@@ -80,24 +80,24 @@ dns_records = {
             86400,  # minimum
         ),
     },
-    'safebank.com.': {
-        dns.rdatatype.A: '192.168.1.102'
+    "safebank.com.": {
+        dns.rdatatype.A: "192.168.1.102"
     },
-    'google.com.': {
-        dns.rdatatype.A: '192.168.1.103'
+    "google.com.": {
+        dns.rdatatype.A: "192.168.1.103"
     },
-    'legitsite.com.': {
-        dns.rdatatype.A: '192.168.1.104'
+    "legitsite.com.": {
+        dns.rdatatype.A: "192.168.1.104"
     },
-    'yahoo.com.': {
-        dns.rdatatype.A: '192.168.1.105'
+    "yahoo.com.": {
+        dns.rdatatype.A: "192.168.1.105"
     },
-    'nyu.edu.': {
-        dns.rdatatype.A: '192.168.1.106',
-        dns.rdatatype.TXT: (encrypted_value.decode('utf-8')),
-        dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')],
-        dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
-        dns.rdatatype.NS: 'ns1.nyu.edu.'
+    "nyu.edu.": {
+        dns.rdatatype.A: "192.168.1.106",
+        dns.rdatatype.TXT: (encrypted_value.decode("utf-8")),
+        dns.rdatatype.MX: [(10, "mxa-00256a01.gslb.pphosted.com.")],
+        dns.rdatatype.AAAA: "2001:0db8:85a3:0000:0000:8a2e:0373:7312",
+        dns.rdatatype.NS: "ns1.nyu.edu."
     }
 }
 
@@ -105,7 +105,7 @@ dns_records = {
 def run_dns_server():
     # Create a UDP socket and bind it to the local IP address and port (the standard port for DNS)
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # Research this
-    server_socket.bind(('0.0.0.0', 53))
+    server_socket.bind(("0.0.0.0", 53))
 
     while True:
         try:
