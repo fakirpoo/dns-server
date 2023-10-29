@@ -50,7 +50,7 @@ password = "rh3723@nyu.edu"
 input_string = "AlwaysWatching"
 
 encrypted_value = encrypt_with_aes(input_string, password, salt)  # test function
-decrypted_value = decrypt_with_aes(encrypted_data, password, salt)  # test function
+decrypted_value = decrypt_with_aes(encrypted_value, password, salt)  # test function
 
 
 # For future use
